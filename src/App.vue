@@ -1,79 +1,108 @@
 <template>
-  <div id="app" class="root-page-wrapper">
-    <Header class="header" v-bind:msg="msg" />
-    <Menu class="menu" v-if="showMenu" />
-    <router-view class="content" />
-    <Footer class="footer" />
-  </div>
+    <div id="app" class="root-page-wrapper">
+        <Header class="header" v-bind:msg="msg" />
+        <div class="container">
+            <Menu
+                id="menu"
+                class="menu"
+            />
+            <router-view
+                class="content"
+            />
+        </div>
+        <Footer class="footer" />
+    </div>
 </template>
 
 <script>
+import "@/content/base.css";
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
 import Header from "@/components/Header.vue";
 
 export default {
-  name: "app",
-  components: {
-    Footer,
-    Menu,
-    Header
-  },
-  data() {
-    return {
-      msg: "Simple message to Header",
-      showMenu: true
-    };
-  }
+    name: "app",
+    components: {
+        Footer,
+        Menu,
+        Header
+    },
+    data() {
+        return {
+            msg: "Simple message to Header",
+        };
+    },
+    methods: {
+        showHideMenu() {
+            // Todo:
+            // надо по клику по бургер-кнопке из header показывать и прятать menu 
+        }
+    }
 };
 </script>
 
 <style lang="scss">
-.root-page-wrapper {
-  height: 100%;
-  display: grid;
-  grid-gap: 3px;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 2 0vh 100% 20vh; 
+@import "@/content/scss/_variables.scss";
+
+.container {
+    padding-top: $toolbar-height;
+    min-height: 100vh;
 }
 
 .header {
-  grid-column: span 12;
+    position: fixed;
+    width: 100%;
 }
 
 .menu {
-  grid-column: span 4;
+    position: fixed;
+    width: $menu-width;
+    height: 100%;
+
+    &_show {
+        display: initial;
+    }
+
+    &_hide {
+        display: none;
+    }
 }
 
 .content {
-  grid-column: span 8;
+    margin-left: $menu-width;
+    padding: 10px 20px;
+
+    &_show {
+        display: initial;
+    }
+
+    &_hide {
+        display: none;
+    }
 }
 
 .footer {
-  grid-column: span 12;
+    width: 100%;
+    position: absolute;
 }
 
 @media screen and (max-width: 640px) {
-  .menu {
-    display: none;
-  }
+    .menu {
+        display: none;
+    }
 
-  .content {
-    grid-column: span 12;
-  }
+    .content {
+        margin-left: 0;
+    }
 
-  .header-burger-button {
-    display: inline-block!important;
-    margin-right: 20px;
-  }
+    .header-burger-button {
+        display: inline-block !important;
+    }
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    text-align: center;
 }
-
 </style>

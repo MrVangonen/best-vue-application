@@ -2,6 +2,7 @@
     <div id="nav">
         <div class="list-group">
             <router-link class="list-group__item" to="/">Shedule</router-link>
+            <router-link class="list-group__item" to="/disciplines">Disciplines</router-link>
             <router-link class="list-group__item" to="/students"
                 >Students</router-link
             >

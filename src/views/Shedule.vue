@@ -5,7 +5,6 @@
             Super Schedule
         </h1>
             <ScheduleTable class="scedule-table"/>
-
         <!-- <li v-for="item in items" :key= "item"> {{item.text}} </li> --> 
     </div>
 </template>

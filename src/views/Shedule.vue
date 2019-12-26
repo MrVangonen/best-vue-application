@@ -1,77 +1,36 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png" />
+        <img alt="Vue logo" src="../assets/images/lang.jpg">
         <h1 class="home__title">
-            Lorem Text Title
+            Super Schedule
         </h1>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-            impedit vel sed id nesciunt cum distinctio explicabo? Praesentium
-            consectetur provident officia voluptatem, architecto in numquam
-            eaque ipsam porro laboriosam voluptates.
-        </p>
-        <p class="home__next">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
-            laboriosam similique porro accusamus sit suscipit maxime voluptatum,
-            atque illo dolorem esse fugit necessitatibus nesciunt vero minima ex
-            voluptatem magni obcaecati Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Impedit labore sunt ipsa consectetur ex neque
-            voluptatibus autem itaque magnam, at ea repudiandae deserunt,
-            possimus numquam odio totam accusantium! Tempora, quis. 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
-            laboriosam similique porro accusamus sit suscipit maxime voluptatum,
-            atque illo dolorem esse fugit necessitatibus nesciunt vero minima ex
-            voluptatem magni obcaecati Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Impedit labore sunt ipsa consectetur ex neque
-            voluptatibus autem itaque magnam, at ea repudiandae deserunt,
-            possimus numquam odio totam accusantium! Tempora, quis. 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
-            laboriosam similique porro accusamus sit suscipit maxime voluptatum,
-            atque illo dolorem esse fugit necessitatibus nesciunt vero minima ex
-            voluptatem magni obcaecati Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Impedit labore sunt ipsa consectetur ex neque
-            voluptatibus autem itaque magnam, at ea repudiandae deserunt,
-            possimus numquam odio totam accusantium! Tempora, quis. 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
-            laboriosam similique porro accusamus sit suscipit maxime voluptatum,
-            atque illo dolorem esse fugit necessitatibus nesciunt vero minima ex
-            voluptatem magni obcaecati Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Impedit labore sunt ipsa consectetur ex neque
-            voluptatibus autem itaque magnam, at ea repudiandae deserunt,
-            possimus numquam odio totam accusantium! Tempora, quis. 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
-            laboriosam similique porro accusamus sit suscipit maxime voluptatum,
-            atque illo dolorem esse fugit necessitatibus nesciunt vero minima ex
-            voluptatem magni obcaecati Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Impedit labore sunt ipsa consectetur ex neque
-            voluptatibus autem itaque magnam, at ea repudiandae deserunt,
-            possimus numquam odio totam accusantium! Tempora, quis. 
-        </p>
+            <ScheduleTable class="scedule-table"/>
+
+        <!-- <li v-for="item in items" :key= "item"> {{item.text}} </li> --> 
     </div>
 </template>
 
 <script>
+import ScheduleTable from "@/components/ScheduleTable.vue";
 export default {
     name: "home",
-    components: {}
+    components: { ScheduleTable },
+    data() {
+        return {
+        }
+    },
+    methods: {
+        showHideMenu() {
+            // Todo:
+            // надо по клику по бургер-кнопке из header показывать и прятать menu 
+        }
+    }
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/content/scss/_variables.scss";
-
-.home {
-    background-color: #fff;
-    color: $dark-color;
-
-    &__title {
-        color: $main-font-color;
-        font-size: 24px;
-        padding-bottom: 10px;
-    }
-
-    &__next {
-        color: $usual-font-color;
-    }
+.home__title {
+    margin-top: 50px;
 }
 </style>

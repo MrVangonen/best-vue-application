@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Shedule from '../views/Shedule'
+import Disciplines from '../views/Disciplines'
 import Students from '../views/Students'
 import About from '../views/About'
 
@@ -11,6 +12,11 @@ const routes = [
     path: '/',
     name: 'Shedule',
     component: Shedule
+  },
+  {
+    path: '/disciplines',
+    name: 'Disciplines',
+    component: Disciplines
   },
   {
     path: '/students',

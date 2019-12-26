@@ -3,7 +3,7 @@
         <button class="header-burger-button">
             <i class="fas fa-bars"></i>
         </button>
-        <a class="logo-container d-flex flex-row align-center" title="Личный кабинет" href="https://www.petrsu.ru">
+        <a class="logo-container d-flex flex-row align-center" title="Личный кабинет" href="https://www.petrsu.ru" target="_blank">
             <img width="30" height="30" class="mr-3" src="../assets/images/petrsu_logo_blue.png" />
             <h2>Личный Кабинет Преподавателя ПетрГУ</h2>
         </a>
